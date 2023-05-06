@@ -109,11 +109,7 @@ openDelete(){
       location.reload()}
     )
   }
-/*   alert("ESTAS SEGURO DE ELIMINAR EL REGISTRO?")
-   this.PersonaService.DeletePersona(this.personaSeleccionada.id)
-     console.log();  
-    
-  }; */
+
 
 }
 }
