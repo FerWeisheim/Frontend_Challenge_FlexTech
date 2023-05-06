@@ -7,6 +7,10 @@ const router:Routes=[
 {
   path:'Inicio',
   component:PersonaComponent
+},
+{
+  path:'**',
+  redirectTo: 'Inicio'
 }
 
 
