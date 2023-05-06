@@ -1,0 +1,21 @@
+<div class="w-full bg-white rounded-3xl">
+  <form [formGroup]="perfil" (ngSubmit)="updateProfile()">
+    <h2 class="p-0 text-4xl font-normal" mat-dialog-title>Editar Persona</h2>
+    <mat-dialog-content class="mat-typography">
+      <div class="flex flex-col gap-6">
+        <input type="text" placeholder="Nombre" class="border-none focus:ring-0 bg-[#F2F2F2] hover:bg-[#dad8d8]" formControlName="nombre" >
+        <input type="text" placeholder="Apellido" class="border-none focus:ring-0 bg-[#F2F2F2] hover:bg-[#dad8d8]" formControlName="apellido" value="{{data.persona.apellido}}">
+        <input type="date" placeholder="fecha_nacimiento" class="border-none focus:ring-0 bg-[#F2F2F2] hover:bg-[#dad8d8]" formControlName="fecha_nacimiento" value="{{data.persona.fecha_nacimiento | date: 'yyyy-MM-dd'}}">
+        <input type="text" placeholder="direccion" class="border-none focus:ring-0 bg-[#F2F2F2] hover:bg-[#dad8d8]" formControlName="direccion" value="{{data.persona.direccion}}">
+        <input type="text" placeholder="pais" class="border-none focus:ring-0 bg-[#F2F2F2] hover:bg-[#dad8d8]" formControlName="pais" value="{{data.persona.pais}}">
+        <input type="number" placeholder="telefono" class="border-none focus:ring-0 bg-[#F2F2F2] hover:bg-[#dad8d8]" formControlName="telefono" value="{{data.persona.telefono}}">
+      </div>
+      </mat-dialog-content>
+      <mat-dialog-actions align="end">
+        <div  class="flex gap-2">
+          <button mat-button mat-dialog-close class="px-4 py-2 border border-transparent rounded-full text-secondary hover:border hover:border-secondary">Cancel</button>
+          <button mat-button [mat-dialog-close]="true" cdkFocusInitial class="px-4 py-2 text-white border border-transparent rounded-full bg-green-600" type="submit" >Actualizar</button>
+        </div>
+      </mat-dialog-actions>
+  </form>
+</div>

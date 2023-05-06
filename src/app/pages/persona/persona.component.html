@@ -1,0 +1,66 @@
+
+
+
+<div class="container mx-5 m-auto">
+  <button mat-button (click)="openDialogCreatePersona()">Agregar Persona</button>
+    <h1 class="text-center text-5xl">PERSONAS</h1>
+    <div class="flex flex-col">
+      <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+          <div class="overflow-hidden">
+            <table class="min-w-full text-center text-sm font-light">
+              <thead
+                class="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900" 
+                >
+                <tr>
+                  <th scope="col" class=" px-6 py-4">#</th>
+                  <th scope="col" class=" px-6 py-4">Nombre</th>
+                  <th scope="col" class=" px-6 py-4">Apellido</th>
+                  <th scope="col" class=" px-6 py-4">Fecha de Nacimiento</th>
+                  <th scope="col" class=" px-6 py-4">Direccion</th>
+                  <th scope="col" class=" px-6 py-4">Telefono</th>
+                  <th scope="col" class=" px-6 py-4">Pais</th>
+                  <th scope="col" class=" px-6 py-4">Acciones</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let personas of ListadoDePersonas">
+                <tr class="border-b dark:border-neutral-500">
+                  <td class="whitespace-nowrap  px-6 py-4 font-medium">*</td>
+                  <td class="whitespace-nowrap  px-6 py-4">{{personas.nombre}}</td>
+                  <td class="whitespace-nowrap  px-6 py-4">{{personas.apellido}}</td>
+                  <td class="whitespace-nowrap  px-6 py-4">{{personas.fecha_nacimiento | date: 'dd/MM/yyyy' }}</td>
+                  <td class="whitespace-nowrap  px-6 py-4">{{personas.direccion}}</td>
+                  <td class="whitespace-nowrap  px-6 py-4">{{personas.telefono}}</td>
+                  <td class="whitespace-nowrap  px-6 py-4">{{personas.pais}}</td>
+                  <td class="whitespace-nowrap  px-6 py-4"><button mat-button (click)="personaSeleccionada = personas; openDialog()">Editar</button> | <button mat-button (click)="personaSeleccionada = personas; openDelete()">Borrar</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #delete>
+    <h1 mat-dialog-title>Delete file</h1>
+<div mat-dialog-content>
+  Would you like to delete cat.jpeg?
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+</div>
+  </ng-template>
+
+<!--   <app-modal-add-update *ngFor="let persona of ListadoDePersonas" []></app-modal-add-update> -->
+
+
+
+  <div class="container m-5 mx-auto text-center">
+    <h1>ESTADISTICAS</h1>
+    <canvas id="bubchart"></canvas>
+</div>
+ 
+  
+   
